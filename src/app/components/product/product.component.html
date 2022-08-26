@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center mt-5">
+        <h1>Product profile</h1>
+    </div>
+    <div class="col-sm-12 mt-5">
+      <div class="card shadow-lg p-3 mb-5 bg-white rounded" *ngIf="product">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src={{product!.imageUrl}} class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{product!.name}}</h5>
+              <p class="card-text">{{product!.description}}</p>
+              <p class="card-text"><small class="text-muted">{{product!.price | currency}} - Cantidad: {{product!.quantity}}</small></p>
+              <img src="https://i.pinimg.com/originals/5a/d0/47/5ad047a18772cf0488a908d98942f9bf.gif" class="img-fluid rounded-start" style="width: 50%; height: 200px;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

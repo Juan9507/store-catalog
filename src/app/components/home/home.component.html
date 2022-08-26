@@ -2,6 +2,9 @@
 <app-carousel></app-carousel>
 <div class="container">
     <div class="row">
+        <div class="col-md-12 mb-3 mt-5">
+            <h1 class="text-center">Products</h1>
+        </div>
         <div class="col-sm-4 mt-5" *ngFor="let product of products">
             <div class="card shadow p-1 mb-5 bg-white rounded">
                 <img src={{product.imageUrl}} class="card-img-top" alt="...">
@@ -9,9 +12,10 @@
                   <h5 class="card-title">{{product.name}}</h5>
                   <p class="card-text">{{product.description}}</p>
                   <p class="card-text" style="color: green;">{{product.price | currency}} - Cantidad: {{product.quantity}}</p>
-                  <a href="#" class="btn btn-primary">Buy prodict</a>
+                  <button class="btn btn-primary" (click)="buyProduct(product.id)">Buy product</button>
                 </div>
               </div>
         </div>
     </div>
 </div>
+<app-footer></app-footer>

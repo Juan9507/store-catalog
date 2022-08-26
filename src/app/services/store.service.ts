@@ -22,6 +22,12 @@ export class StoreService {
     .pipe(catchError(this.handleError<Product[]>('getRequest', [])));
   }
 
+  public getResquestId(id:number): Observable<Product>{
+    return this.httpClient
+    .get<Product>(this.REST_API_SERVER + "/" + id)
+    .pipe(catchError(this.handleError<Product>('getResquest')));  
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
