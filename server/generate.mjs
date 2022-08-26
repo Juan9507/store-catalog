@@ -3,19 +3,19 @@ import { writeFileSync } from 'fs';
 
 let database = { products: [] = []}
 
-function createRamdomProduct() {
+function createRamdomProduct(index) {
     return {
-        id: faker.random.numeric(),
+        id: index,
         name: faker.commerce.productName(),
         description: faker.commerce.productDescription(),
         price: faker.commerce.price(),
-        imageUrl: faker.image.abstract(),
+        imageUrl: 'https://picsum.photos/400?random=' + index,
         quantity: faker.random.numeric()
     }
 }
 
-Array.from({ length: 10 }).forEach(() => {
-    database.products.push(createRamdomProduct())
+Array.from({ length: 100 }).forEach((values, index) => {
+    database.products.push(createRamdomProduct(index + 1))
 });
 
 console.log(JSON.stringify(database))
