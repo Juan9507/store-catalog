@@ -8,6 +8,7 @@ import { Product } from '../models/product';
 })
 export class StoreService {
 
+  //iniciar server -> npx json-server --watch server/database.json
   private REST_API_SERVER: string = "http://localhost:3000/products";
 
   httpOptions = {

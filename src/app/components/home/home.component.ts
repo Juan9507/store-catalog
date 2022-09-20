@@ -11,6 +11,10 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   products: Product[] = [];
+  page: number = 1
+  count: number = 0
+  pageSize: number = 10
+  pageSizes: number[] = [3, 6, 9, 12]
 
   constructor(private storeService: StoreService, private router: Router) { }
 
@@ -28,6 +32,18 @@ export class HomeComponent implements OnInit {
 
   buyProduct(id: number){
     this.router.navigate(['product/' + id])
+  }
+
+  onPageDataChange(event: any){
+    this.page = event
+    this.getProducts()
+    window.scrollTo(0,0)
+  }
+
+  onPageSizeChange(event: any): void{
+    this.pageSize = event.target.value
+    this.page = 1
+    this.getProducts()
   }
 
 }

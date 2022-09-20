@@ -1,0 +1,13 @@
+.seleted {
+    background-color: darkgrey;
+}
+
+.form-select{
+    width: auto !important;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    box-shadow: #ced4da;
+}
+.items-pages{
+    font-size: 10px;
+}
